@@ -12,5 +12,5 @@ Elenco componenti sviluppate per il primo compito:
 - [uploadXML (Lambda Function)](codice/lambda/uploadXML.py): Prende l’xml in upload, esegue una convalida secondo le direttive del file .xsd dello standard IOF presente su github, aggiunge la gara all’interno del database e salva il file xml con un nome univoco. In caso fosse già presente la gara permette il suo aggiornamento (se non già finita).
 - Bucket S3 (xmlresults): Contiene i file xml contenenti i dati
 - DynamoDB: Contiene 2 tabelle:
-+ ‘ListaGare’, con al suo interno le informazioni delle gare, data e ora di inizio e fine, nome della gara, l’URI del file salvato nel bucket S3 e id univoco.
-+ ‘Accounts’ con al suo interno i token per l’autenticazione
+  + ‘ListaGare’, con al suo interno le informazioni delle gare, data e ora di inizio e fine, nome della gara, l’URI del file salvato nel bucket S3 e id univoco.
+  + ‘Accounts’ con al suo interno i token per l’autenticazione
