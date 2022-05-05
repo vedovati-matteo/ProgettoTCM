@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload XML</title>
+</head>
+<body>
+	<input type="file" id="xmlFile">
+	<button id="xmlUpload">Upload Xml file</button>
+	<br><br>
+	<form id="uploadForm"></form>
+	
+	
+    <script>
+		var xmlStr = ""
+		$(document).ready(function() { 
+			$("#uploadForm").submit(function(e){
+				e.preventDefault();
+				X = $("#min").val()
+				$xml = $( $.parseXML(xmlStr) )
+				data = xmlGenerator($xml, X)
+				
+				url = 'https://y6pkuf6a6c.execute-api.us-east-1.amazonaws.com/uploadXML'
+				auth = base_auth($("#user").val(), $('#pass').val())
+
+				$.ajax({
+					type: 'POST',
+					url: url,
+					dataType: 'text',
+					headers: {
+						'Authorization': auth
+					},
+					data: data,
+					success: callback_success,
+					error: callback_error
+				});
+				
+			});
+		});
+
+		callback_success = function (data) {
+			alert('success: '+JSON.stringify(data))
+		}
+
+		callback_error = function (data) {
+			alert('error: ' + JSON.stringify(data))
+		}
+		
+		// lettura file XLM
+		$('#xmlUpload').click(function(){
+			//var file = $("#xmlFile").prop('files');
+			var file = document.getElementById('xmlFile').files[0];
+			var reader = new FileReader();
+			reader.readAsText(file, 'UTF-8');
+			reader.onload = function (evt) {
+				xmlStr = evt.target.result;
+				var xmlDoc = $.parseXML(xmlStr)
+				$xml = $( xmlDoc )
+				//alert($xml.find("Event").find("StartTime").find("Date").text())
+				var eventStart = $xml.find("Event").find("StartTime").find("Date").text() + 'T' + $xml.find("Event").find("StartTime").find("Time").text()
+				var eventEnd = $xml.find("Event").find("EndTime").find("Date").text() + 'T' + $xml.find("Event").find("EndTime").find("Time").text()
+				var milliseconds = ((new Date(eventEnd)) - (new Date(eventStart)));
+				var minutes = milliseconds / (60000);
+				
+				$('#uploadForm').append(
+					'	User: <input type="text" id="user">' +
+					'	Pass: <input type="password" id="pass">' +
+					'	<br><br>' +
+					'	<p>l\'evento è durato un totale di ' + minutes + ' minuti</p>' +
+					'	<p>selezionare il numero di minuti passati dall\'inizio della gara (-1 per inviare tutta la gara): <input type="number" value="0" id="min"></p>' +
+					'	<input type="submit" value="invia i dati">'
+				)
+			}
+		})
+
+        function xmlGenerator ($xmlDoc, X){ //X = quanti minuti sono passati
+			if (X != -1)
+			{
+				X = parseInt(X)
+				var eventStart = $xmlDoc.find("Event").find("StartTime").find("Date").text() + 'T' + $xmlDoc.find("Event").find("StartTime").find("Time").text()
+				
+				var eventEnd = $xmlDoc.find("Event").find("EndTime").find("Date").text() + 'T' + $xmlDoc.find("Event").find("EndTime").find("Time").text()
+				var now = Date.parse(eventStart) + X*60000
+				
+				if (now < Date.parse(eventEnd)){
+					$xmlDoc.find("Event").find("EndTime").remove()
+					$xmlDoc.find('PersonResult').each(function() {
+						var pStart = Date.parse($(this).find('StartTime').text()) //p sta per persona
+						if ( pStart > now ){
+							//l'altleta non ha iniziato, lo devo cancellare
+							$(this).remove()
+						}
+						else{
+							//l'atleta ha iniziato
+							//inizio a cancellare gli splitTime oltre il tempo
+							$(this).find('SplitTime').each(function(){
+								if (parseInt($(this).find('Time').text()) *1000 + pStart > now) {
+									$(this).remove()
+								}
+							})
+							
+							//iniziamo il controllo sulla fine della sua corsa
+							pEnd = Date.parse($(this).find('EndTime').text())
+							if(pEnd > now){
+								//l'atleta non ha finito la corsa, lo devo cancellare
+								$(this).find('EndTime').remove()
+							}
+						}
+					})
+				}
+			}
+			
+			var xmlString = (new XMLSerializer()).serializeToString($xmlDoc.get(0))
+			return xmlString
+        }
+        
+		function base_auth(user, pass) {
+			var tok = user + ':' + pass;
+			var hash = btoa(tok);
+			return "Basic " + hash;
+		}
+	
+	</script>
+</body>
+
+</html>
