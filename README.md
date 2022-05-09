@@ -14,3 +14,12 @@ Elenco componenti sviluppate per il primo compito:
 - DynamoDB: Contiene 2 tabelle:
   + ‘ListaGare’, con al suo interno le informazioni delle gare, data e ora di inizio e fine, nome della gara, l’URI del file salvato nel bucket S3 e id univoco.
   + ‘Accounts’ con al suo interno i token per l’autenticazione
+
+## [Homework 2](Homework%202)
+Elenco componenti:
+- [Authorizer (Lambda Function)](Homework%201/codice/lambda/authorizer.py)
+- [RegisterRace (Lambda Function)](Homework%201/codice/lambda/registerRace.py)
+- [UploadXML (Lambda Function)](Homework%201/codice/lambda/uploadXML.py)
+- [GetListGareJSON (Lambda Function)](Homework%201/codice/lambda/getListGareJSON.py)
+- [Placement (Lambda Function)](Homework%201/codice/lambda/placement.py)
+- [GetGaraXML (Lambda Function)](Homework%201/codice/lambda/getGaraXML.py)
