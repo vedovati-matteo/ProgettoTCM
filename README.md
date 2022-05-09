@@ -17,9 +17,9 @@ Elenco componenti sviluppate per il primo compito:
 
 ## [Homework 2](Homework%202)
 Elenco componenti:
-- [Authorizer (Lambda Function)](Homework%201/codice/lambda/authorizer.py)
-- [RegisterRace (Lambda Function)](Homework%201/codice/lambda/registerRace.py)
-- [UploadXML (Lambda Function)](Homework%201/codice/lambda/uploadXML.py)
-- [GetListGareJSON (Lambda Function)](Homework%201/codice/lambda/getListGareJSON.py)
-- [Placement (Lambda Function)](Homework%201/codice/lambda/placement.py)
-- [GetGaraXML (Lambda Function)](Homework%201/codice/lambda/getGaraXML.py)
+- [Authorizer (Lambda Function)](Homework%202/codice/lambda/authorizer.py)
+- [RegisterRace (Lambda Function)](Homework%202/codice/lambda/registerRace.py)
+- [UploadXML (Lambda Function)](Homework%202/codice/lambda/uploadXML.py)
+- [GetListGareJSON (Lambda Function)](Homework%202/codice/lambda/getListGareJSON.py)
+- [Placement (Lambda Function)](Homework%202/codice/lambda/placement.py)
+- [GetGaraXML (Lambda Function)](Homework%202/codice/lambda/getGaraXML.py)
