@@ -26,10 +26,10 @@ Elenco componenti:
 
 ## [Homework 3](Homework%203) - ([Presentazione](Homework%202/JQuelli%20-%20Presentazione%202%20AWS.pdf))
 Elenco Paginesviluppate in Flutter:
-- [Home Page](Homework%202/codice/lambda/registerRace.py)
-- [Pagina Gara](Homework%202/codice/lambda/registerRace.py) ([Categorie](Homework%202/codice/lambda/registerRace.py), [Clubs](Homework%202/codice/lambda/registerRace.py))
-- [Risultati Categoria](Homework%202/codice/lambda/registerRace.py)
-- [Risultato Atleta](Homework%202/codice/lambda/registerRace.py)
-- [Risultati Club](Homework%202/codice/lambda/registerRace.py)
+- [Home Page](homework%203/codice/flutter/lib/main.dart)
+- [Pagina Gara](homework%203/codice/flutter/lib/event.dart) ([Categorie](homework%203/codice/flutter/lib/categories.dart), [Clubs](homework%203/codice/flutter/lib/clubs.dart))
+- [Risultati Categoria](homework%203/codice/flutter/lib/categoriesResults.dart)
+- [Risultato Atleta](homework%203/codice/flutter/lib/psplits.dart)
+- [Risultati Club](homework%203/codice/flutter/lib/clubResults.dart)
 
 
