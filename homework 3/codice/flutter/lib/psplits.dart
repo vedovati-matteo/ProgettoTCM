@@ -82,7 +82,7 @@ Widget createSplitTable(Map <String,dynamic> atleta, Map <String,dynamic> primo)
       columns: const <DataColumn>[
         DataColumn(
           label: Text(
-            'CODICE INTERTEMPO',
+            'INTERTEMPO',
             style: TextStyle(fontStyle: FontStyle.italic,),
             
           ),
