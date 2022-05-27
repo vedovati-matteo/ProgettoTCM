@@ -24,7 +24,7 @@ Elenco componenti:
 - [Placement (Lambda Function)](Homework%202/codice/lambda/placement.py): chiamate GET all'endpoint /results
 - [GetGaraXML (Lambda Function)](Homework%202/codice/lambda/getGaraXML.py): chiamata GET all'endpoint /downloadxml
 
-## [Homework 3](Homework%203) - ([Presentazione](Homework%203/JQuelli_-_Presentazione_3_Flutter.pdf))
+## [Homework 3](homework%203) - ([Presentazione](homework%203/JQuelli_-_Presentazione_3_Flutter.pdf))
 Elenco Paginesviluppate in Flutter:
 - [Home Page](homework%203/codice/flutter/lib/main.dart)
 - [Pagina Gara](homework%203/codice/flutter/lib/event.dart) ([Categorie](homework%203/codice/flutter/lib/categories.dart), [Clubs](homework%203/codice/flutter/lib/clubs.dart))
