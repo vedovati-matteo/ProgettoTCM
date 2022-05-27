@@ -23,3 +23,13 @@ Elenco componenti:
 - [GetListaGareJSON (Lambda Function)](Homework%202/codice/lambda/getListaGareJSON.py): chiamata GET all'endpoint /list_races
 - [Placement (Lambda Function)](Homework%202/codice/lambda/placement.py): chiamate GET all'endpoint /results
 - [GetGaraXML (Lambda Function)](Homework%202/codice/lambda/getGaraXML.py): chiamata GET all'endpoint /downloadxml
+
+## [Homework 3](Homework%203) - ([Presentazione](Homework%202/JQuelli%20-%20Presentazione%202%20AWS.pdf))
+Elenco Paginesviluppate in Flutter:
+- [Home Page](Homework%202/codice/lambda/registerRace.py)
+- [Pagina Gara](Homework%202/codice/lambda/registerRace.py) ([Categorie](Homework%202/codice/lambda/registerRace.py), [Clubs](Homework%202/codice/lambda/registerRace.py))
+- [Risultati Categoria](Homework%202/codice/lambda/registerRace.py)
+- [Risultato Atleta](Homework%202/codice/lambda/registerRace.py)
+- [Risultati Club](Homework%202/codice/lambda/registerRace.py)
+
+
