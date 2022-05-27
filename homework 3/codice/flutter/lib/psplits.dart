@@ -36,6 +36,8 @@ class SplitsState extends State<Splits> {
                   SizedBox(height: 10),
                   Text("${widget.atleta['family']} ${widget.atleta['given']}", textScaleFactor: name_surname_scale.toDouble()),
                   SizedBox(height: 10),
+                  Text("CLUB: ${widget.atleta['club']['name']}"),
+                  SizedBox(height: 10),
                   Text("POSIZIONE: ${widget.atleta['position']}"),
                   SizedBox(height: 10),
                   Text("TEMPO: ${widget.atleta['time']}"),
@@ -80,20 +82,20 @@ Widget createSplitTable(Map <String,dynamic> atleta, Map <String,dynamic> primo)
       columns: const <DataColumn>[
         DataColumn(
           label: Text(
-            'CONTROL CODE',
+            'CODICE INTERTEMPO',
             style: TextStyle(fontStyle: FontStyle.italic,),
             
           ),
         ),
         DataColumn(
           label: Text(
-            'TIME',
+            'TEMPO',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
         ),
         DataColumn(
           label: Text(
-            'DIFFERENCE',
+            'DIFFERENZA',
             style: TextStyle(fontStyle: FontStyle.italic),
           ),
         ),
