@@ -90,7 +90,7 @@ class _ClubResultsState extends State<ClubResults> {
                         itemBuilder: ((c, i) => Card(
                           child: ListTile(
                             title: Text(clubResults[index][i]['given'] + ' ' + clubResults[index][i]['family']),
-                            subtitle: Text((clubResults[index][i]['position'] == -1) ? 'in gara' : 'Tempo: ' + clubResults[index][i]['time'].toString() + ' sec - posizione: ' +  clubResults[index][i]['position'].toString()),
+                            subtitle: Text((clubResults[index][i]['position'] == -1) ? 'Non arrivato' : 'Tempo: ' + clubResults[index][i]['time'].toString() + ' sec - posizione: ' +  clubResults[index][i]['position'].toString()),
                           ),
                         )),
                       )
