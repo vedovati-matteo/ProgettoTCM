@@ -91,7 +91,7 @@ class _CategoryResultsState extends State<CategoryResults> {
                     child: Card(
                         child: ListTile(
                             title: Text(classResults[index]['given'] + ' ' + classResults[index]['family']),
-                            subtitle: Text((classResults[index]['position'] == -1) ? 'in gara' : 'Posizione: ' +  classResults[index]['position'].toString() + ' - Tempo: ' + classResults[index]['time'].toString() + ' sec'),
+                            subtitle: Text((classResults[index]['position'] == -1) ? 'Non arrivato' : 'Posizione: ' +  classResults[index]['position'].toString() + ' - Tempo: ' + classResults[index]['time'].toString() + ' sec'),
                           )
                       )
                   ))
