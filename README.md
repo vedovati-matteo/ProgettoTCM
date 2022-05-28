@@ -31,5 +31,5 @@ Elenco Paginesviluppate in Flutter:
 - [Risultati Categoria](homework%203/codice/flutter/lib/categoriesResults.dart)
 - [Risultato Atleta](homework%203/codice/flutter/lib/psplits.dart)
 - [Risultati Club](homework%203/codice/flutter/lib/clubResults.dart)
-
+Aggiunta funzione in Lambda per ottenere la lista dei Clubs: [OrganizationList](homework%203/codice/lambda/organizationList.py)
 
